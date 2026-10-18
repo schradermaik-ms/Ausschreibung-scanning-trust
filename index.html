@@ -58,7 +58,8 @@ function val(r){switch(key){case'frist':return r.frist||'';case'gefunden':return
 function card(r,badge){const c=el('article','card '+(badge?'c-'+r.kategorie:'c-alt'));const t=el('div','top');
  if(badge){t.append(el('span','badge k-'+r.kategorie,r.kategorie),el('span','mut','Relevanz '+r.relevanz));
   if(urg(r))t.append(el('span','chip bad','Frist in '+days(r)+(days(r)===1?' Tag':' Tagen')));
-  if(isNew(r))t.append(el('span','chip new','Neu'))}
+  const g=r.gefunden?r.gefunden.slice(8,10)+'.'+r.gefunden.slice(5,7)+'.':'';
+  if(isNew(r))t.append(el('span','chip new','Neu seit '+g));else if(g)t.append(el('span','mut','gefunden '+g))}
  t.append(el('span','fr',r.frist_anzeige));c.append(t,el('h3',null,r.titel),el('div','mut',r.auftraggeber+' · '+r.ort));
  if(r.kurz)c.append(el('div',null,r.kurz));
  const dl=el('dl');[['volumen','Umfang'],['laufzeit','Laufzeit'],['anforderungen','Anforderungen'],['hinweis','Hinweis']].forEach(([f,l])=>{if(r[f]){dl.append(el('dt',null,l),el('dd',null,r[f]))}});
