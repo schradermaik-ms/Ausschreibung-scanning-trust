@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>Ausschreibungs-Monitor</title>
+<link rel="icon" href="favicon.png">
 <style>
 :root{--bg:#f6f5f1;--panel:#fff;--fg:#1d1d1b;--mut:#6b6a65;--line:#e1dfd8;--ok:#1a7f4b;--warn:#b26a00;--bad:#c0392b;--info:#2c6fbb}
 @media(prefers-color-scheme:dark){:root{--bg:#161615;--panel:#212120;--fg:#f0eee8;--mut:#9b9a94;--line:#35342f;--ok:#4cc38a;--warn:#e0a040;--bad:#ef6b5b;--info:#6ea8ee}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,sans-serif}
 main{max-width:1000px;margin:0 auto;padding:20px 16px 48px}
+.brand{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:18px;display:flex}.brand img{height:34px;width:auto;max-width:100%;display:block}
 h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 10px}h3{font-size:16px;margin:0}
 .mut{color:var(--mut);font-size:13px}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
@@ -30,6 +32,7 @@ a.l:hover{background:var(--bg)}
 .leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--mut);margin-bottom:12px}
 .leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 </style></head><body><main>
+<div class="brand"><img src="logo.jpg" alt="TRUST Promotion"></div>
 <h1>Ausschreibungs-Monitor</h1>
 <p class="mut">TRUST Promotion · Personaldienstleistungen in Deutschland · Stand: <span id="upd">…</span> · täglich automatisch aktualisiert. Auf den Portalen ist ein Login nötig.</p>
 <div class="kpis" id="kpis"></div>
