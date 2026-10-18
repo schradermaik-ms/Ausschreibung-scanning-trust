@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Ausschreibungs-Monitor</title>
+<style>
+:root{--bg:#f6f5f1;--panel:#fff;--fg:#1d1d1b;--mut:#6b6a65;--line:#e1dfd8;--ok:#1a7f4b;--warn:#b26a00;--bad:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#161615;--panel:#212120;--fg:#f0eee8;--mut:#9b9a94;--line:#35342f;--ok:#4cc38a;--warn:#e0a040;--bad:#ef6b5b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:32px 0 10px}h3{font-size:16px;margin:0}
+.mut{color:var(--mut);font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}.kpi b{display:block;font-size:28px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+button{font:inherit;font-size:13px;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:4px 12px;cursor:pointer}
+button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px;display:flex;flex-direction:column;gap:6px}
+.card.urg{border-left:4px solid var(--bad)}
+.top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px}
+.badge{border:1px solid currentColor;border-radius:99px;padding:0 8px;font-weight:600}
+.k-Kern{color:var(--ok)}.k-Prüfen{color:var(--warn)}.k-Randtreffer,.k-Angrenzend{color:var(--mut)}
+.fr{margin-left:auto;font-weight:600}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;font-size:13px;margin:0}dt{color:var(--mut)}dd{margin:0}
+a.l{align-self:flex-start;font-size:13px;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:4px 10px;text-decoration:none}
+a.l:hover{background:var(--bg)}
+</style></head><body><main>
+<h1>Ausschreibungs-Monitor</h1>
+<p class="mut">TRUST Promotion · Personaldienstleistungen in Deutschland · früheste Frist zuerst · Stand: <span id="upd">…</span> · täglich automatisch aktualisiert. Auf den Portalen ist ein Login nötig.</p>
+<div class="kpis" id="kpis"></div>
+<h2>Offen</h2><div class="bar" id="flt"></div><div id="open"></div>
+<h2>Kürzlich abgelaufen</h2><p class="mut">Zur Marktbeobachtung – diese Auftraggeber schreiben oft erneut aus.</p><div id="old"></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);let D,kat='alle';
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const urg=r=>{if(!r.frist)return false;const m=new Date(r.frist+'T23:59:59').getTime()-Date.now();return m>=0&&m<=3*864e5};
+function card(r,badge){const c=el('article','card'+(badge&&urg(r)?' urg':''));const t=el('div','top');
+ if(badge){t.append(el('span','badge k-'+r.kategorie,r.kategorie),el('span','mut','Relevanz '+r.relevanz))}
+ t.append(el('span','fr',r.frist_anzeige));c.append(t,el('h3',null,r.titel),el('div','mut',r.auftraggeber+' · '+r.ort));
+ if(r.kurz)c.append(el('div',null,r.kurz));
+ const dl=el('dl');[['volumen','Umfang'],['laufzeit','Laufzeit'],['anforderungen','Anforderungen'],['hinweis','Hinweis']].forEach(([f,l])=>{if(r[f]){dl.append(el('dt',null,l),el('dd',null,r[f]))}});
+ if(dl.children.length)c.append(dl);
+ const a=el('a','l','Zur Ausschreibung · '+r.portal);a.href=r.link;a.target='_blank';a.rel='noopener noreferrer';c.append(a);return c}
+function draw(){const T=D.tenders,n=k=>T.filter(t=>t.kategorie===k).length;
+ $('kpis').replaceChildren(...[[T.length,'Offene Ausschreibungen'],[n('Kern'),'Kern (Event, Messe, Hostessen, Helfer)'],[n('Angrenzend'),'Angrenzend'],[n('Prüfen')+n('Randtreffer'),'Prüfen / Randtreffer']].map(([v,l])=>{const d=el('div','kpi');d.append(el('b',null,v),el('span','mut',l));return d}));
+ $('flt').replaceChildren(...['alle','Kern','Angrenzend','Prüfen','Randtreffer'].map(k=>{const b=el('button',null,k==='alle'?'Alle':k);b.setAttribute('aria-pressed',k===kat);b.onclick=()=>{kat=k;draw()};return b}));
+ const rows=T.filter(r=>kat==='alle'||r.kategorie===kat).sort((a,b)=>String(a.frist).localeCompare(String(b.frist)));
+ $('open').replaceChildren(...(rows.length?rows.map(r=>card(r,true)):[el('p','mut','Keine Treffer.')]));
+ $('old').replaceChildren(...D.abgelaufen.map(r=>card(r,false)));$('upd').textContent=D.updated}
+fetch('data.json?'+Date.now()).then(r=>r.json()).then(d=>{D=d;draw()}).catch(()=>{$('open').textContent='Daten konnten nicht geladen werden.'});
+</script></body></html>
