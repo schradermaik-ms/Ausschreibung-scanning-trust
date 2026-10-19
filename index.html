@@ -27,6 +27,7 @@ button[aria-pressed=true]{background:var(--fg);color:var(--bg)}
 .chip.bad{background:var(--bad)}.chip.new{background:var(--info)}
 .fr{margin-left:auto;font-weight:600;text-align:right}
 dl{display:grid;grid-template-columns:max-content 1fr;gap:2px 12px;font-size:13px;margin:0}dt{color:var(--mut)}dd{margin:0}
+.nolink{align-self:flex-start;font-size:13px;color:var(--fg);border:1px dashed var(--line);border-radius:8px;padding:4px 10px}
 a.l{align-self:flex-start;font-size:13px;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:4px 10px;text-decoration:none}
 a.l:hover{background:var(--bg)}
 .leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--mut);margin-bottom:12px}
@@ -64,7 +65,7 @@ function card(r,badge){const c=el('article','card '+(badge?'c-'+r.kategorie:'c-a
  if(r.kurz)c.append(el('div',null,r.kurz));
  const dl=el('dl');[['volumen','Umfang'],['laufzeit','Laufzeit'],['anforderungen','Anforderungen'],['hinweis','Hinweis']].forEach(([f,l])=>{if(r[f]){dl.append(el('dt',null,l),el('dd',null,r[f]))}});
  if(dl.children.length)c.append(dl);
- const a=el('a','l','Zur Ausschreibung · '+r.portal);a.href=r.link;a.target='_blank';a.rel='noopener noreferrer';c.append(a);return c}
+ if(r.link){const a=el('a','l','Zur Ausschreibung · '+r.portal);a.href=r.link;a.target='_blank';a.rel='noopener noreferrer';c.append(a)}else{c.append(el('div','nolink','Kein Direktlink gefunden · bitte manuell suchen'+(r.portal?' (Quelle: '+r.portal+')':'')))}return c}
 function draw(){const T=D.tenders,n=k=>T.filter(t=>t.kategorie===k).length;
  $('kpis').replaceChildren(...[[T.length,'Offene Ausschreibungen'],[n('Kern'),'Kern (Event, Messe, Hostessen, Helfer)'],[n('Angrenzend'),'Angrenzend'],[n('Prüfen')+n('Randtreffer'),'Prüfen / Randtreffer']].map(([v,l])=>{const d=el('div','kpi');d.append(el('b',null,v),el('span','mut',l));return d}));
  $('flt').replaceChildren(...['alle','Kern','Angrenzend','Prüfen','Randtreffer'].map(k=>{const b=el('button',null,k==='alle'?'Alle':k);b.setAttribute('aria-pressed',k===kat);b.onclick=()=>{kat=k;draw()};return b}));
