@@ -1,5 +1,5 @@
 {
- "updated": "22.10.2026 07:38",
+ "updated": "25.10.2026 07:37",
  "tenders": [
   {
    "id": "wetzlar_kassendienst_museen",
@@ -306,19 +306,99 @@
    "portal": "evergabe.de",
    "link": "https://www.evergabe.de/ausschreibung/dynamisches-beschaffungssystem-fuer-arbeitnehmerueberlassung-nichtmedizinisches-personal-10115-berlin-6557942",
    "gefunden": "2026-10-18"
+  },
+  {
+   "id": "itzbund_anue_zentrale_dienste_koeln_bonn",
+   "kategorie": "Angrenzend",
+   "relevanz": "hoch",
+   "titel": "Rahmenvertrag Arbeitnehmerüberlassung zentrale Dienste und Haushalt (Köln, Düsseldorf, Bonn)",
+   "auftraggeber": "im Portal nicht sichtbar (frühere Fassung: ITZBund)",
+   "ort": "Köln, Düsseldorf, Bonn",
+   "frist": "2026-11-11",
+   "frist_anzeige": "Mi 11.11.2026, 12:00 Uhr (Frist gegenüber früherer Meldung verlängert)",
+   "kurz": "Rahmenvertrag über Arbeitnehmerüberlassung von Bürokräften und Hausarbeiter:innen auf Abruf für zentrale Dienste und Haushalt; sechs Lose nach Standort.",
+   "volumen": "Mindestkapazität pro Vertragsjahr: 4 VZÄ Bürokraft, 5 VZÄ Hausarbeiter",
+   "laufzeit": "Rahmenvertrag (Laufzeit nicht sichtbar, vermutlich mehrjährig)",
+   "anforderungen": "AÜG-Erlaubnis; Details nach Login",
+   "hinweis": "Arbeitnehmerüberlassung. Fremdpersonal Verwaltung/Hauswirtschaft. Laufzeit/Optionen nach Login prüfen. Frist war zuvor 21.10.2026 (abgelaufen-Eintrag ersetzt).",
+   "portal": "evergabe.de (Login nötig)",
+   "link": "https://www.evergabe.de/ausschreibung/rahmenvertrag-fuer-arbeitnehmerueberlassungen-im-bereich-zentrale-dienste-und-haushalt-53175-bonn-6574155",
+   "gefunden": "2026-10-25"
+  },
+  {
+   "id": "itzbund_anue_zentrale_dienste_hannover_hamburg",
+   "kategorie": "Angrenzend",
+   "relevanz": "hoch",
+   "titel": "Rahmenvertrag Arbeitnehmerüberlassung zentrale Dienste und Haushalt (Hannover, Hamburg)",
+   "auftraggeber": "im Portal nicht sichtbar (frühere Fassung: ITZBund)",
+   "ort": "Hannover, Hamburg",
+   "frist": "2026-11-11",
+   "frist_anzeige": "Mi 11.11.2026, 12:00 Uhr (Frist gegenüber früherer Meldung verlängert)",
+   "kurz": "Rahmenvertrag über Arbeitnehmerüberlassung von Bürokräften und Hausarbeiter:innen auf Abruf für zentrale Dienste und Haushalt; sechs Lose nach Standort.",
+   "volumen": "Mindestkapazität pro Vertragsjahr: 4 VZÄ Bürokraft, 5 VZÄ Hausarbeiter",
+   "laufzeit": "Rahmenvertrag (Laufzeit nicht sichtbar, vermutlich mehrjährig)",
+   "anforderungen": "AÜG-Erlaubnis; Details nach Login",
+   "hinweis": "Arbeitnehmerüberlassung. Fremdpersonal Verwaltung/Hauswirtschaft. Laufzeit/Optionen nach Login prüfen. Frist war zuvor 21.10.2026 (abgelaufen-Eintrag ersetzt).",
+   "portal": "evergabe.de (Login nötig)",
+   "link": "https://www.evergabe.de/ausschreibung/rahmenvertrag-fuer-arbeitnehmerueberlassungen-im-bereich-zentrale-dienste-und-haushalt-53175-bonn-6574335",
+   "gefunden": "2026-10-25"
+  },
+  {
+   "id": "bundestag_bundesversammlung_2027",
+   "kategorie": "Prüfen",
+   "relevanz": "mittel",
+   "titel": "Unterstützende Organisation und Ausstattung der 18. Bundesversammlung am 30. Januar 2027",
+   "auftraggeber": "Deutscher Bundestag – Vergabereferat",
+   "ort": "Berlin",
+   "frist": "2026-11-17",
+   "frist_anzeige": "Di 17.11.2026",
+   "kurz": "Unterstützung bei Organisation und Ausstattung der Bundesversammlung am 30.01.2027; Personaleinsatz (Einlass, Betreuung) möglich.",
+   "volumen": "unbekannt",
+   "laufzeit": "unbekannt",
+   "anforderungen": "",
+   "hinweis": "Kein Direktlink gefunden – manuell suchen: ibau.de Kategorie 'Organisation Veranstaltungen' / Vergabeportal des Bundestages, Titel 'Bundesversammlung'. Veröffentlicht 16.10.2026.",
+   "portal": "ibau.de (Liste)",
+   "link": "",
+   "gefunden": "2026-10-25"
+  },
+  {
+   "id": "kbb_rv_personal_filmvorfuehrung",
+   "kategorie": "Prüfen",
+   "relevanz": "hoch",
+   "titel": "RV Personal Filmvorführung",
+   "auftraggeber": "Kulturveranstaltungen des Bundes in Berlin GmbH (KBB GmbH)",
+   "ort": "Berlin",
+   "frist": "2026-11-12",
+   "frist_anzeige": "Do 12.11.2026",
+   "kurz": "Rahmenvertrag über Personal für Filmvorführungen (vermutlich Vorführ-/Servicepersonal bei KBB-Häusern).",
+   "volumen": "unbekannt",
+   "laufzeit": "unbekannt",
+   "anforderungen": "",
+   "hinweis": "Kein Direktlink gefunden – manuell suchen: ibau.de / DTVP, Titel 'RV Personal Filmvorführung', KBB GmbH. Vermutlich Fachpersonal (Filmvorführer) – Passung prüfen. Veröffentlicht 12.10.2026.",
+   "portal": "ibau.de (Liste)",
+   "link": "",
+   "gefunden": "2026-10-25"
+  },
+  {
+   "id": "eit_education_skills_days_2027",
+   "kategorie": "Prüfen",
+   "relevanz": "mittel",
+   "titel": "Event Implementation & Participant Services for EIT Education & Skills Days 2027",
+   "auftraggeber": "EIT Culture & Creativity GmbH",
+   "ort": "Köln",
+   "frist": "2026-11-16",
+   "frist_anzeige": "Mo 16.11.2026",
+   "kurz": "Durchführung und Teilnehmerservice für die EIT Education & Skills Days 2027 (Eventagentur-Leistung inkl. Betreuung).",
+   "volumen": "unbekannt",
+   "laufzeit": "unbekannt",
+   "anforderungen": "",
+   "hinweis": "Kein Direktlink gefunden – manuell suchen: ibau.de, Titel 'EIT Education & Skills Days 2027', Auftraggeber EIT Culture & Creativity. Eher Agenturleistung, Personalanteil prüfen. Veröffentlicht 14.10.2026.",
+   "portal": "ibau.de (Liste)",
+   "link": "",
+   "gefunden": "2026-10-25"
   }
  ],
  "abgelaufen": [
-  {
-   "id": "itzbund_anue_zentrale_dienste",
-   "titel": "Rahmenvertrag Arbeitnehmerüberlassung zentrale Dienste und Haushalt",
-   "auftraggeber": "Informationstechnikzentrum Bund (ITZBund)",
-   "ort": "Bonn",
-   "frist_anzeige": "Frist war 21.10.2026",
-   "hinweis": "Frist in drei Tagen",
-   "portal": "evergabe.de",
-   "link": "https://www.evergabe.de/ausschreibung/rahmenvertrag-fuer-arbeitnehmerueberlassungen-im-bereich-zentrale-dienste-und-haushalt-53175-bonn-6574335"
-  },
   {
    "id": "hamburg_messe_hostessen",
    "titel": "Hostessendienstleistungen für Veranstaltungen in Hamburg",
@@ -378,16 +458,6 @@
    "hinweis": "Rahmenvereinbarung für Sicherheit, Empfang und Garderobe",
    "portal": "TED",
    "link": "https://ted.europa.eu/de/notice/-/detail/431162-2026"
-  },
-  {
-   "id": "autobahn_winterdienst_anue",
-   "titel": "Leiharbeitnehmer für flexiblen Winterdiensteinsatz",
-   "auftraggeber": "Die Autobahn GmbH des Bundes, Niederlassung Westfalen",
-   "ort": "Ehringshausen, Freudenberg, Lüdenscheid",
-   "frist_anzeige": "Frist war 13.10.2026",
-   "hinweis": "Drei Lose, Abruf innerhalb von 30 bis 45 Minuten, Zuschlag allein nach Preis",
-   "portal": "Vergabeportal Autobahn",
-   "link": "https://vergabe.autobahn.de/NetServer/TenderingProcedureDetails?function=_Details&TenderOID=54321-Tender-1a03cf2acc7-7543a377bbc6d28"
   },
   {
    "id": "vznrw_transport_logistik_aufbau",
