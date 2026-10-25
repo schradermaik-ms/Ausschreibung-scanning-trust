@@ -53,7 +53,7 @@ const $=id=>document.getElementById(id);let D,kat='alle',key='frist',asc=true;
 const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 const days=r=>{if(!r.frist)return null;return Math.ceil((new Date(r.frist+'T23:59:59').getTime()-Date.now())/864e5)};
 const urg=r=>{const d=days(r);return d!=null&&d>=0&&d<=3};
-const isNew=r=>r.gefunden&&(Date.now()-new Date(r.gefunden+'T00:00:00').getTime())<=4*864e5;
+const isNew=r=>r.gefunden&&(Date.now()-new Date(r.gefunden+'T00:00:00').getTime())<=8*864e5;
 const REL={hoch:3,mittel:2,gering:1};
 function val(r){switch(key){case'frist':return r.frist||'';case'gefunden':return r.gefunden||'';case'relevanz':return REL[r.relevanz]||0;default:return String(r[key]||'').toLowerCase()}}
 function card(r,badge){const c=el('article','card '+(badge?'c-'+r.kategorie:'c-alt'));const t=el('div','top');
